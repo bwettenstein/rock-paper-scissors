@@ -22,23 +22,24 @@ h2 {
     background-color: transparent;
     border-color: #002851;
     border-width: 3px;
+    color: #2b2b2b;
 }
 .new-game{
-    transform: translate(1100px, -400px);
+    transform: translate(1190px, -400px);
 }
 .source-code{
-    transform: translate(830px, -100px);
+    transform: translate(919px, -200px);
 }
 .left-box, .mid-box, .right-box{
     position: relative;
 }
 .left-box h2{
     position: absolute;
-    transform: translate(350px, -550px);
+    transform: translate(450px, -550px);
     font-size: 38pt;
 }
 .left-icons{
-    transform: translate(0%, 20%);
+    transform: translate(50%, 20%);
     width: 110px;
 }
 .left-icons li{
@@ -49,19 +50,19 @@ h2 {
 }
 .left-line hr{
     position: absolute;
-    transform: translate(200px, -480px);
+    transform: translate(300px, -480px);
 }
 .mid-line hr{
     position: absolute;
-    transform: translate(600px, -400px);
+    transform: translate(700px, -400px);
 }
 .right-line hr{
     position: absolute;
-    transform: translate(1000px, -480px);
+    transform: translate(1100px, -480px);
 }
 .right-box h2{
     position: absolute;
-    transform: translate(750px, -550px);
+    transform: translate(850px, -550px);
     font-size: 38pt;
 }
 .fa-hand-rock, .fa-hand-paper, .fa-hand-scissors{
