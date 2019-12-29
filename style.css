@@ -13,8 +13,10 @@ h2 {
 }
 .right-buttons{
     position: relative;
+    height: 0px;
 }
-.new-game, .source-code{
+
+.new-game, .source-code, .left-icons button{
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     width: 7em;
     height: 3em;
@@ -25,18 +27,13 @@ h2 {
     color: #2b2b2b;
 }
 .new-game{
-    transform: translate(1190px, -400px);
+    transform: translate(1220px, -500px);
 }
 .source-code{
-    transform: translate(919px, -200px);
+    transform: translate(950px, -300px);
 }
 .left-box, .mid-box, .right-box{
     position: relative;
-}
-.left-box h2{
-    position: absolute;
-    transform: translate(450px, -550px);
-    font-size: 38pt;
 }
 .left-icons{
     transform: translate(50%, 20%);
@@ -45,20 +42,27 @@ h2 {
 .left-icons li{
     list-style-type: none;
 }
+.left-icons button{
+    width: 120px;
+    height: 50px;
+    font-size: 25pt;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
 .left-line hr, .mid-line hr, .right-line hr{
     background-color: #002851;
 }
 .left-line hr{
     position: absolute;
-    transform: translate(300px, -480px);
+    transform: translate(350px, -580px);
 }
 .mid-line hr{
     position: absolute;
-    transform: translate(700px, -400px);
+    transform: translate(750px, -500px);
 }
 .right-line hr{
     position: absolute;
-    transform: translate(1100px, -480px);
+    transform: translate(1150px, -580px);
 }
 .right-box h2{
     position: absolute;
@@ -75,15 +79,38 @@ h2 {
     padding-top: 10px;
     padding-bottom: 10px;
 }
-.fa-hand-rock:hover, .fa-hand-paper:hover, .fa-hand-scissors:hover{
+.left-icons button:hover{
     background-color: #DBFCFF;
-    transform: scale(1.25);
+    transform: scale(1.15);
 }
 .right-buttons button:hover{
     background-color: #DBFCFF;
     border-color: #002851;
 }
-.right-buttons button:focus{
+.right-buttons button:focus, .left-icons button:hover{
     border-color: #002851;
     outline: none;
+}
+.right-buttons button:active, .left-icons button:active{
+    background-color: #1D6D99;
+}
+.you-cpu{
+}
+.you-cpu ul {
+    list-style-type: none;
+    transform: translate(100px, -600px);
+}
+.you {
+    float: left;
+    transform: translate(400px, 10px);
+}
+.cpu {
+    float: right;
+    transform: translate(-600px, 10px);
+}
+#paperBtn{
+    width: 170px;
+}
+#scissorsBtn{
+    width: 200px;
 }
