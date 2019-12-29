@@ -81,4 +81,9 @@ h2 {
 }
 .right-buttons button:hover{
     background-color: #DBFCFF;
+    border-color: #002851;
+}
+.right-buttons button:focus{
+    border-color: #002851;
+    outline: none;
 }
