@@ -11,9 +11,8 @@ let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-// currently bugged
 const computerChoice = () => {
-    const choices = ["Rock", "Raper", "Scissors"];
+    const choices = ["Rock", "Paper", "Scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
