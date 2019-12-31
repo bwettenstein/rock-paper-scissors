@@ -12,15 +12,15 @@
         <div class="left-icons">
             <ul>
                 <li class="rock">
-                    <i class="fas fa-hand-rock" alt="rock"></i>
+                    <i class="fas fa-hand-rock" alt="rock" id="left-rock-icon"></i>
                     <button id="Rock">Rock</button>
                 </li>
                 <li>
-                    <i class="fas fa-hand-paper" alt="paper"></i>
+                    <i class="fas fa-hand-paper" alt="paper" id="left-paper-icon"></i>
                     <button id="Paper">Paper</button>
                 </li>
                 <li>
-                     <i class="fas fa-hand-scissors" alt="scissors"></i>
+                     <i class="fas fa-hand-scissors" alt="scissors" id="left-scissors-icon"></i>
                      <button id="Scissors">Scissors</button>
                 </li>
             </ul>
@@ -28,10 +28,12 @@
         <div class="you-cpu">
             <ul>
                 <li>
-                    <h2 class="you">You</h2>
+                    <h2 class="you">You:</h2>
+                    <h2 class = "youScore" id="pScore">0</h2>
                 </li>
                 <li>
-                    <h2 class="cpu">CPU</h2>
+                    <h2 class="cpu">CPU:</h2>
+                    <h2 class = "cpuScore" id="cpuScore">0</h2>
                 </li>
             </ul>
         </div>
@@ -39,16 +41,22 @@
             <div class="left-line">
                 <hr width="2" size="600">
             </div>
+        <div class="player-chosen-icon" id="playerChosenIcon">
+            <!--Will be displayed when player chooses an option-->
         </div>
         <div class="mid-box">
             <div class="mid-line">
                 <hr width="2" size="400">
+            </div>
             </div>
         </div>
         <div class="right-box">
             <div class="right-line">
                 <hr width="2" size="600">
             </div>
+        </div>
+        <div class="cpu-chosen-icon" id="cpuChosenIcon">
+            <!--Will be displayed when CPU chooses an option-->
         </div>
         <div class="right-buttons">
             <button class="new-game" id="new-game">New Game</button>
