@@ -6,14 +6,16 @@ let playerScoreReport = document.getElementById("pScore");
 let cpuScoreReport = document.getElementById("cpuScore");
 let playerChosenIcon = document.getElementById("playerChosenIcon");
 let computerChosenIcon = document.getElementById("cpuChosenIcon");
+let totalRounds = document.getElementById("round");
 let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
-
+// currently bugged
 const computerChoice = () => {
     const choices = ["Rock", "Raper", "Scissors"];
-    return choices[Math.floor(Math.random() * choices.length)];
+    let randomNumber = Math.floor(Math.random() * 3);
+    return choices[randomNumber];
 }
 
 // Add the ability to display the reset scores to players in html
@@ -41,53 +43,64 @@ const newGame = () => {
     cpuScoreReport.innerHTML = computerScore;
     playerChosenIcon.innerHTML = "";
     computerChosenIcon.innerHTML = "";
+    totalRounds.innerHTML = "0";
 }
 
 // Gets the choices from both players and then calls functions based on the outcomes
 let playGame = (playerChoice, computerChoice) =>{
     let choices = playerChoice+computerChoice;
-    switch(playerChoice) {
-        case "Rock":
-            displayPlayerIcon(playerChoice);
-        case "Paper":
-            displayPlayerIcon(playerChoice);
-        case "Scissors":
-            displayPlayerIcon(playerChoice);
-    }
-    // switch(choices) {
-    //     case "RockScissors":
-    //     case "PaperRock":
-    //     case "ScissorsPaper":
-    //         win(playerChoice, computerChoice);
-    //         break;
-    //     case "ScissorsRock":
-    //     case "RockPaper":
-    //     case "PaperScissors":
-    //         loss(playerChoice, computerChoice);
-    //         break;
-    //     case "RockRock":
-    //     case "PaperRock":
-    //     case "ScissorsPaper":
-    //         draw(playerChoice, computerChoice);
-    //         break;    
+    // switch(playerChoice) {
+    //     case "Rock":
+    //         displayPlayerIcon(playerChoice);
+    //     case "Paper":
+    //         displayPlayerIcon(playerChoice);
+    //     case "Scissors":
+    //         displayPlayerIcon(playerChoice);
     // }
+    switch(choices) {
+        case "RockScissors":
+        case "PaperRock":
+        case "ScissorsPaper":
+            displayPlayerIcon(playerChoice);
+            displayCpuIcon(computerChoice);
+            return win(playerChoice, computerChoice);
+            break;
+        case "ScissorsRock":
+        case "RockPaper":
+        case "PaperScissors":
+            displayPlayerIcon(playerChoice);
+            displayCpuIcon(computerChoice);
+            loss(playerChoice, computerChoice);
+            break;
+        case "RockRock":
+        case "PaperPaper":
+        case "ScissorsScissors":
+            displayPlayerIcon(playerChoice);
+            displayCpuIcon(computerChoice);
+            draw(playerChoice, computerChoice);
+            break;    
+    }
 }
 
-// Function that increments the player score and number of rounds elapsed after winning. ADD WRITING TO HTML WHEN FINISHED
+// Function that increments the player score and number of rounds elapsed after winning. ADD ending the game when 5 rounds elapse
 const win = (playerChoice, computerChoice) => {
     playerScore++;
     rounds++;
     playerScoreReport.innerHTML = playerScore;
+    totalRounds.innerHTML = rounds;
+
 }
 
 const loss = (playerChoice, computerChoice) => {
     computerScore++;
     rounds++;
     cpuScoreReport.innerHTML = computerScore;
+    totalRounds.innerHTML = rounds;
 }
 
 const draw = (playerChoice, computerChoice) => {
     rounds++;
+    totalRounds.innerHTML = rounds;
 }
 
 let displayPlayerIcon = (playerChoice) => {

@@ -110,6 +110,14 @@ h2 {
     float: right;
     transform: translate(880px, 10px);
 }
+.rounds {
+    position: relative;
+}
+.rounds h2 {
+    position: absolute;
+    transform: translate(500px);
+    font-size: 58px;
+}
 #Paper{
     width: 170px;
 }
@@ -117,7 +125,7 @@ h2 {
     width: 200px;
 }
 #playerIcon {
-    transform: translate(340px, -400px);
+    transform: translate(400px, -400px);
     width: 135px;
     height: 132px;
     position: absolute;
@@ -139,4 +147,7 @@ h2 {
     padding-right: 10px;
     padding-top: 10px;
     padding-bottom: 10px;
+}
+#round{
+    transform: translate(710px);
 }
