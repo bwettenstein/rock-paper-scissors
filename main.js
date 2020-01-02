@@ -84,22 +84,38 @@ let playGame = (playerChoice, computerChoice) =>{
 // Function that increments the player score and number of rounds elapsed after winning. ADD ending the game when 5 rounds elapse
 const win = (playerChoice, computerChoice) => {
     playerScore++;
-    rounds++;
-    playerScoreReport.innerHTML = playerScore;
-    totalRounds.innerHTML = rounds;
+    if (rounds >= 5) {
+        newGame();
+    }
+    else {
+        rounds++;
+        playerScoreReport.innerHTML = playerScore;
+        totalRounds.innerHTML = rounds;
+    }
 
 }
 
 const loss = (playerChoice, computerChoice) => {
     computerScore++;
-    rounds++;
-    cpuScoreReport.innerHTML = computerScore;
-    totalRounds.innerHTML = rounds;
+    if (rounds >= 5) {
+        newGame();
+    }
+    else {
+        rounds++;
+        cpuScoreReport.innerHTML = computerScore;
+        totalRounds.innerHTML = rounds;
+    }
 }
 
+// Need to add ability to write to html when there's a draw
 const draw = (playerChoice, computerChoice) => {
-    rounds++;
-    totalRounds.innerHTML = rounds;
+    if (rounds >= 5) {
+        newGame();
+    }
+    else {
+        rounds++;
+        totalRounds.innerHTML = rounds;
+    }
 }
 
 let displayPlayerIcon = (playerChoice) => {
