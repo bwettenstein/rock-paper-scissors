@@ -48,14 +48,6 @@ const newGame = () => {
 // Gets the choices from both players and then calls functions based on the outcomes
 let playGame = (playerChoice, computerChoice) =>{
     let choices = playerChoice+computerChoice;
-    // switch(playerChoice) {
-    //     case "Rock":
-    //         displayPlayerIcon(playerChoice);
-    //     case "Paper":
-    //         displayPlayerIcon(playerChoice);
-    //     case "Scissors":
-    //         displayPlayerIcon(playerChoice);
-    // }
     switch(choices) {
         case "RockScissors":
         case "PaperRock":
@@ -69,14 +61,14 @@ let playGame = (playerChoice, computerChoice) =>{
         case "PaperScissors":
             displayPlayerIcon(playerChoice);
             displayCpuIcon(computerChoice);
-            loss(playerChoice, computerChoice);
+            return loss(playerChoice, computerChoice);
             break;
         case "RockRock":
         case "PaperPaper":
         case "ScissorsScissors":
             displayPlayerIcon(playerChoice);
             displayCpuIcon(computerChoice);
-            draw(playerChoice, computerChoice);
+            return draw(playerChoice, computerChoice);
             break;    
     }
 }
@@ -132,7 +124,7 @@ let displayPlayerIcon = (playerChoice) => {
 
 let displayCpuIcon = (computerChoice) => {
     if (computerChoice === "Rock") {
-        computerChoice.innerHTML = "<i class='fas fa-hand-rock' alt='rock' id='cpuIcon'></i>";
+        computerChosenIcon.innerHTML = "<i class='fas fa-hand-rock' alt='rock' id='cpuIcon'></i>";
     }
     else if (computerChoice === "Paper") {
         computerChosenIcon.innerHTML = "<i class='fas fa-hand-paper' alt='paper' id='cpuIcon'></i>";
