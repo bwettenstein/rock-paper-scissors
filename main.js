@@ -82,7 +82,7 @@ const win = (playerChoice, computerChoice) => {
     else {
         rounds++;
         playerScoreReport.innerHTML = playerScore;
-        totalRounds.innerHTML = rounds;
+        totalRounds.innerHTML = rounds + " of 5";
     }
 
 }
@@ -95,7 +95,7 @@ const loss = (playerChoice, computerChoice) => {
     else {
         rounds++;
         cpuScoreReport.innerHTML = computerScore;
-        totalRounds.innerHTML = rounds;
+        totalRounds.innerHTML = rounds + " of 5";
     }
 }
 
@@ -106,7 +106,7 @@ const draw = (playerChoice, computerChoice) => {
     }
     else {
         rounds++;
-        totalRounds.innerHTML = rounds;
+        totalRounds.innerHTML = rounds + " of 5";
     }
 }
 
