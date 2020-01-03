@@ -11,14 +11,16 @@ let playerScore = 0;
 let computerScore = 0;
 let rounds = 0;
 
+// GAME BUTTON FUNCTIONS
+//
+// ComputerChoice function will execute every time the user clicks on one of the buttons to select their move.
 const computerChoice = () => {
     const choices = ["Rock", "Paper", "Scissors"];
     let randomNumber = Math.floor(Math.random() * 3);
     return choices[randomNumber];
 }
-
-// Add the ability to display the reset scores to players in html
-// Add ability to display icons of selections in the boxes
+// Rock, paper, scissors button functions will execute on click and pass in the respective id and random choice from 
+// the computer as function parameteres into the newGame function
 rockButton.addEventListener("click", 
     function() {
         playGame(this.id, computerChoice());
@@ -34,6 +36,9 @@ scissorsButton.addEventListener("click",
     playGame(this.id, computerChoice());
 });
 
+//OTHER BUTTON FUNCTIONS
+//
+// newGame function resets the variable values to 0 and resets the the HTML code that was executed during the previous game.
 const newGame = () => {
     playerScore = 0;
     computerScore = 0;
@@ -44,8 +49,11 @@ const newGame = () => {
     computerChosenIcon.innerHTML = "";
     totalRounds.innerHTML = "0";
 }
+// Calls the newGame function to be executed based on a click of the button
+newGameButton.addEventListener("click", newGame);
 
-// Gets the choices from both players and then calls functions based on the outcomes
+//GAME FUNCTIONS 
+//
 let playGame = (playerChoice, computerChoice) =>{
     let choices = playerChoice+computerChoice;
     switch(choices) {
@@ -73,7 +81,6 @@ let playGame = (playerChoice, computerChoice) =>{
     }
 }
 
-// Function that increments the player score and number of rounds elapsed after winning. ADD ending the game when 5 rounds elapse
 const win = (playerChoice, computerChoice) => {
     playerScore++;
     if (rounds >= 5) {
@@ -99,7 +106,6 @@ const loss = (playerChoice, computerChoice) => {
     }
 }
 
-// Need to add ability to write to html when there's a draw
 const draw = (playerChoice, computerChoice) => {
     if (rounds >= 5) {
         newGame();
@@ -110,6 +116,8 @@ const draw = (playerChoice, computerChoice) => {
     }
 }
 
+// FUNCTIONS THAT DISPLAY IMAGES
+//
 let displayPlayerIcon = (playerChoice) => {
     if (playerChoice === "Rock") {
         playerChosenIcon.innerHTML = "<i class='fas fa-hand-rock' alt='rock' id='playerIcon'></i>";
@@ -133,5 +141,3 @@ let displayCpuIcon = (computerChoice) => {
         computerChosenIcon.innerHTML = "<i class='fas fa-hand-scissors' alt='scissors' id='cpuIcon'></i>";
     }
 } 
-
-newGameButton.addEventListener("click", newGame);
