@@ -90,6 +90,9 @@ const win = (playerChoice, computerChoice) => {
         rounds++;
         playerScoreReport.innerHTML = playerScore;
         totalRounds.innerHTML = rounds + " of 5";
+        if (rounds >= 5) {
+            finalGameStatus();
+        }
     }
 
 }
@@ -103,6 +106,9 @@ const loss = (playerChoice, computerChoice) => {
         rounds++;
         cpuScoreReport.innerHTML = computerScore;
         totalRounds.innerHTML = rounds + " of 5";
+        if (rounds >= 5) {
+            finalGameStatus();
+        }
     }
 }
 
@@ -113,6 +119,21 @@ const draw = (playerChoice, computerChoice) => {
     else {
         rounds++;
         totalRounds.innerHTML = rounds + " of 5";
+        if (rounds >= 5) {
+            finalGameStatus();
+        }
+    }
+}
+
+let finalGameStatus = () => {
+    if (playerScore > computerScore) {
+        alert("You won the game! \nTo start a new game click on 'new game' or any button on the left");
+    }
+    else if (computerScore > playerScore) {
+        alert("You lost the game! \nTo start a new game click on 'new game' or any button on the left");
+    }
+    else {
+        alert("It's a draw! \nTo start a new game click on 'new game' or any button on the left");
     }
 }
 
@@ -140,4 +161,5 @@ let displayCpuIcon = (computerChoice) => {
     else {
         computerChosenIcon.innerHTML = "<i class='fas fa-hand-scissors' alt='scissors' id='cpuIcon'></i>";
     }
-} 
+}
+
